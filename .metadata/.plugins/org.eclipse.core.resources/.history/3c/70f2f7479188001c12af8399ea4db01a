@@ -1,0 +1,5 @@
+package com.ahmed.couleurs.reos;
+
+public interface ColorRepository {
+
+}

@@ -1,0 +1,13 @@
+package com.ahmed.usersCards;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+//import org.springframework.data.jpa.repository.query.Param;
+
+
+import com.ahmed.usersCards.entities.User;
+
+public interface UserRepository extends JpaRepository<User, Long>{
+	User findByUsername(String username);
+
+}

@@ -1,0 +1,22 @@
+CustomFiltersActionGroup.org.eclipse.jdt.ui.PackageExplorer.TAG_DUMMY_TO_TEST_EXISTENCE=storedViewPreferences
+content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"><lhs name\="java.lang.Enum"><rhs name\="javax.persistence.GenerationType"/><rhs name\="javax.persistence.CascadeType"/><rhs name\="javax.persistence.FetchType"/><rhs name\="org.springframework.web.bind.annotation.RequestMethod"/></lhs><lhs name\="com.ahmed.usersCards.entities.User"><rhs name\="com.ahmed.usersCards.entities.User"/></lhs></history>
+content_assist_number_of_computers=17
+content_assist_proposals_background=255,255,255
+content_assist_proposals_foreground=0,0,0
+eclipse.preferences.version=1
+lastRecentlyUsedFilters=org.eclipse.jdt.ui.PackageExplorer_patternFilterId_.*,org.eclipse.jdt.ui.PackageExplorer.SyntheticMembersFilter,org.eclipse.jdt.ui.PackageExplorer.StaticsFilter,
+org.eclipse.buildship.ui.packageexplorer.filter.gradle.buildfolder=false
+org.eclipse.buildship.ui.packageexplorer.filter.gradle.subProject=false
+org.eclipse.jdt.internal.ui.PackageExplorer.EmptyInnerPackageFilter=false
+org.eclipse.jdt.internal.ui.PackageExplorer.HideInnerClassFilesFilter=false
+org.eclipse.jdt.internal.ui.navigator.layout=2
+org.eclipse.jdt.internal.ui.navigator.librariesnode=true
+org.eclipse.jdt.ui.PackageExplorer.EmptyLibraryContainerFilter=false
+org.eclipse.jdt.ui.PackageExplorer.ImportDeclarationFilter=false
+org.eclipse.jdt.ui.PackageExplorer.PackageDeclarationFilter=false
+org.eclipse.jdt.ui.PackageExplorer.SyntheticMembersFilter=false
+org.eclipse.jdt.ui.formatterprofiles.version=18
+org.eclipse.pde.ui.ExternalPluginLibrariesFilter1=false
+spelling_locale_initialized=true
+useAnnotationsPrefPage=true
+useQuickDiffPrefPage=true

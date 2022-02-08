@@ -1,0 +1,17 @@
+package com.ahmed.usersBackEnd;
+
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+
+import com.ahmed.usersBackEnd.entities.User;
+
+//faire toute les operation à travers ça
+public interface UserRepository extends JpaRepository<User, Long>{
+	User findByUsername(String username);
+	User findByEmail(String email);
+	List<User> findByEmail(String email);
+
+}
+

@@ -1,0 +1,5 @@
+package com.ahmed.usersBackEnd.entities;
+
+public class User {
+
+}

@@ -1,0 +1,5 @@
+package com.ahmed.usersCards.entities;
+
+public class User {
+
+}

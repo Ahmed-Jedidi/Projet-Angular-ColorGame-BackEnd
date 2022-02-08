@@ -1,0 +1,22 @@
+package com.ahmed.usersCards.RestControllers;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.ahmed.usersCards.UserRepository;
+
+@RestController
+@CrossOrigin(origins = "*")
+
+public class UserRESTController {
+	
+	@Autowired
+	UserRepository userRep;
+	
+	@RequestMapping(Value ="/login/{username}", method = RequestMethod.GET)
+	public User getUserByUsername(@PathVariable("username") String username) {
+		return userRep.findByUsername(username);
+	}
+
+}

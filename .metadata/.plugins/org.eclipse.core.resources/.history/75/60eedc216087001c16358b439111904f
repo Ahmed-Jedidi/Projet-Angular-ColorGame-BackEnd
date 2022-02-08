@@ -1,0 +1,95 @@
+package com.ahmed.livres.service;
+
+import java.util.Arrays;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.ahmed.livres.entities.Genre;
+import com.ahmed.livres.entities.Livre;
+import com.ahmed.livres.repos.GenreRepository;
+import com.ahmed.livres.repos.LivreRepository;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+
+@Service
+public class LivreServiceImpl implements LivreService{
+	
+	//odonné à sprint Injection une implementation des dependances 
+	@Autowired
+	
+	//objet pour CRUD
+	LivreRepository livreRepository;
+	//GenreRepository genreRepository;
+	
+
+	@Override
+	public Livre saveLivre(Livre l) {
+		return livreRepository.save(l);
+	}
+
+	@Override
+	public Livre updateLivre(Livre l) {
+		return livreRepository.save(l);
+	}
+
+	@Override
+	public void deleteLivre(Livre l) {
+		livreRepository.delete(l);
+	}
+
+	@Override
+	public void deleteLivreById(Long id) {
+		livreRepository.deleteById(id);
+	}
+
+	@Override
+	public Livre getLivre(Long id) {
+		return livreRepository.findById(id).get();
+	}
+
+	@Override
+	public List<Livre> getAllLivres() {
+		return livreRepository.findAll();
+	}
+	
+	
+	
+	
+	@Override
+	public List<Livre> findByTitreLivreContains(String titre) {
+	return livreRepository.findByTitreLivreContains(titre);
+	}
+	/////////////////////////////////////////
+	@Override
+	public List<Livre> findByGenre(Genre genre) {
+	return livreRepository.findByGenre(genre);
+	}
+	@Override
+	public List<Livre> findByGenreIdGen(Long id) {
+	return livreRepository.findByGenreIdGen(id);
+	}
+
+	
+	
+	/////////////////////////////////////////
+	/*@Override
+	public List<Genre> getAllGenres() {
+		return genreRepository.findAll();
+	}*/
+	
+	
+	/*@Override
+	public List<Livre> getAllLivresGenre() {
+		ObjectMapper mapper = new ObjectMapper();
+		
+		List<Livre> genre = livreRepository.findAll();
+		JsonNode jsonNode = mapper.readTree("[genre]");
+		return livreRepository.findAll();
+		//return jsonNode.get("genre").asText();
+	}*/
+	
+
+}

@@ -1,0 +1,8 @@
+package com.ahmed.couleurs.service;
+
+public interface ColorService {
+	
+	Color saveColor(Color c);
+	List<Color> getAllColors();
+
+}

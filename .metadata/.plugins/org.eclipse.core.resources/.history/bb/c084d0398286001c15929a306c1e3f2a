@@ -1,0 +1,22 @@
+package com.ahmed.usersCards;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.ahmed.usersCards.entities.User;
+
+@SpringBootTest
+class UserCardApplicationTests {
+
+	@Test
+	void contextLoads() {
+	}
+
+	@Test
+	void testUsername() {
+		User u = userRep.findByUsername("ahmed");
+		
+		System.out.println(u);
+	}
+	
+}

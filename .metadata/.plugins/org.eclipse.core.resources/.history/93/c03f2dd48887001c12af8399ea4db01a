@@ -1,0 +1,9 @@
+package com.ahmed.usersBackEnd.service;
+
+import java.util.List;
+
+public interface UserService {
+	 
+	List<User> getAllUsers();
+
+}

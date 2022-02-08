@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="BackEndApplicationTests" project="BackEnd" tests="2" started="2" failures="0" errors="0" ignored="0">
+  <testsuite name="com.ahmed.usersBackEnd.BackEndApplicationTests" time="0.434" displayname="BackEndApplicationTests" uniqueid="[engine:junit-jupiter]/[class:com.ahmed.usersBackEnd.BackEndApplicationTests]">
+    <testcase name="testFindUserByEmail" classname="com.ahmed.usersBackEnd.BackEndApplicationTests" time="0.397" displayname="testFindUserByEmail()" uniqueid="[engine:junit-jupiter]/[class:com.ahmed.usersBackEnd.BackEndApplicationTests]/[method:testFindUserByEmail()]"/>
+    <testcase name="testListerTousUsers" classname="com.ahmed.usersBackEnd.BackEndApplicationTests" time="0.037" displayname="testListerTousUsers()" uniqueid="[engine:junit-jupiter]/[class:com.ahmed.usersBackEnd.BackEndApplicationTests]/[method:testListerTousUsers()]"/>
+  </testsuite>
+</testrun>

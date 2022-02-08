@@ -1,0 +1,6 @@
+INDEX VERSION 1.131+C:\Users\Ahmed\Desktop\DSI23\06 Angular\Spring Boot STS\.metadata\.plugins\org.eclipse.jdt.core
+118896185.index
+174407297.index
+2194821267.index
+1521121978.index
+1891422425.index

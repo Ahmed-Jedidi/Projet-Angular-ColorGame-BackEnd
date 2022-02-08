@@ -1,0 +1,33 @@
+package com.ahmed.usersBackEnd.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+
+
+import com.ahmed.usersBackEnd.RoleRepository;
+import com.ahmed.usersBackEnd.entities.Role;
+
+@Service
+public class RoleServiceImpl implements RoleService{
+	
+		//odonné à sprint Injection une implementation des dependances 
+		@Autowired
+			
+		//objet pour CRUD
+		RoleRepository roleRepository;
+		//RoleRepository roleRepository;
+			
+		/*@Override
+		public Role saveRole(Role r) {
+			return roleRepository.save(r);
+		}*/
+		
+		@Override
+		public List<Role> getAllRoles() {
+			return roleRepository.findAll();
+		}
+
+}

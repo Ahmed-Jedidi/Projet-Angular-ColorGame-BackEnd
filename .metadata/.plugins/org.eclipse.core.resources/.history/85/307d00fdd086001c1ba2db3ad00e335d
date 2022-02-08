@@ -1,0 +1,24 @@
+package com.ahmed.usersBackEnd;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.ahmed.usersBackEnd.entities.User;
+import com.ahmed.usersBackEnd.UserRepository;
+
+@SpringBootTest
+class BackEndApplicationTests {
+	
+	
+	@Autowired
+	//declaration depuis interface
+	//permet de faire toute les operation sur les données JPA
+	//Par injection des dependance
+	private UserRepository userRepository;
+
+	@Test
+	void contextLoads() {
+	}
+
+}
