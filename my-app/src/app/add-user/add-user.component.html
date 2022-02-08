@@ -1,0 +1,104 @@
+<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+
+<div class="container">
+    <div class="mt-4 mb-4">
+        <h2>Add new user :</h2>
+        <div class="alert alert-success" *ngIf="submittted ">
+            <strong>Successfully added</strong>
+        </div>
+    </div>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <!--<div hidden class="col-sm-2 col-md-2 col-lg-2 mb-4">
+                <label>ID User</label>
+                <input type="number" [(ngModel)]="newUser.iduser" name="iduser" class="form-control" min="1" step="1">
+            </div>-->
+    
+        <div class="col-sm-4 col-md-4 col-lg-4 mb-4">
+            <label for="Username">Username</label>
+    
+            <div class="input-group">
+                <div class="input-group-append">
+                    <span class="input-group-text rounded-left"><i class="fa fa-user-circle"></i></span>
+                </div>
+                <input type="text" [(ngModel)]="newUser.username" formControlName="username" name="username"
+                    class="form-control" placeholder="Username"
+                    [ngClass]="{ ' is-invalid ': submitted && name?.hasError('required') }" />
+                <div class="invalid-feedback" *ngIf=" name?.hasError('required') && submitted ">
+                    <div>* required : true</div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="col-sm-4 col-md-4 col-lg-4 mb-4">
+            <label for="Email">Email</label>
+        
+            <div class="input-group">
+                <div class="input-group-append">
+                    <span class="input-group-text rounded-left"><i class="fas fa-at"></i></span>
+                </div>
+                <input type="text" [(ngModel)]="newUser.email" formControlName="email" name="email" class="form-control"
+                    placeholder="Email"
+                    [ngClass]="{ ' is-invalid ': submitted && (mail?.hasError('required') || mail?.hasError('minlength') || mail?.hasError('email'))}" />
+                <div class="invalid-feedback" *ngIf=" mail?.hasError('required') && submitted ">
+                    <div>* required : true</div>
+                </div>
+                <div class="invalid-feedback" *ngIf=" mail?.hasError('email') && submitted ">
+                    <div>* email : false</div>
+                </div>
+                <div class="invalid-feedback" *ngIf=" mail?.hasError('minlength') && submitted ">
+                    <div>* Longueur min 6 caractères</div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="form-group col-sm-4 col-md-4 col-lg-4 mb-4">
+            <label for="Password">Password</label>
+        
+            <div class="input-group">
+                <div class="input-group-append">
+                    <span class="input-group-text rounded-left"><i class="fas fa-lock"></i></span>
+                </div>
+                <input type="password" [(ngModel)]="newUser.password" formControlName="password" name="password"
+                    class="form-control" placeholder="Password" [ngClass]="{  
+                        ' is-invalid ': submitted && (pass?.hasError('required') || pass?.hasError('minlength'))  ,
+                        ' is-valid ': submitted && (!pass?.hasError('required') && !pass?.hasError('minlength')) }">
+                <div class="invalid-feedback" *ngIf=" pass?.hasError('required') && submitted ">
+                    <div>* required : true</div>
+                </div>
+                <div class="invalid-feedback" *ngIf=" pass?.hasError('minlength') && submitted ">
+                    <div>* longeur min 5 caractère</div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="form-group col-sm-4 col-md-4 col-lg-4">
+            <label>Role</label>
+            <!--<select class="form-control form-control-lg" id="idRole" name="idRole" [(ngModel)]="newIdRole">
+                        <option *ngFor="let r of roles" [value]="r.idRole">-->
+            <select class="form-control form-control-lg " id="idRole" name="idRole" [(ngModel)]="newUser.role"
+                formControlName="role" [ngClass]="{  
+                        ' is-invalid ': submitted && ro?.hasError('required')  ,
+                        ' is-valid ': submitted && !ro?.hasError('required')  }">
+        
+                <option *ngFor="let r of roles" [ngValue]="r">
+                    {{r.nomRole}}
+                </option>
+            </select>
+            <div class="invalid-feedback" *ngIf=" ro?.hasError('required') || submitted">
+                <div>* required : true</div>
+            </div>
+        </div>
+
+
+
+        <div class="col-sm-2 col-md-2 col-lg-2 mt-2">
+            <input type="submit" class="btn btn-primary" value="Add">
+        </div>
+    </form>

@@ -1,0 +1,64 @@
+
+<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+<div class="container mt-5">
+
+    <div class="row justify-content-md-center">
+
+        <div class="col-md-12">
+            <h1>Login</h1>
+
+            <div class="alert alert-danger" *ngIf="erreur==1">
+                <strong>Error: invalid credential</strong>
+            </div>
+            <!--//////////////////////////////////////////////////////////////////////-->
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <!--[disabled]="loading" loginForm.valid    (click)="onLoggedin()"    class row       pattern=".+@globex\.com" minsize="30" required-->
+                    <!---------------------------------------------------------------------->
+                    <label  for="Email">Email</label>
+                    <div class="input-group mb-3">
+                        <div class="input-group-append">
+                            <span class="input-group-text rounded-left"><i class="fas fa-at"></i></span>
+                        </div>
+                        <input [(ngModel)]="user.email" formControlName="email" type="email" name="email" class="form-control" 
+                         placeholder="Username"  [ngClass]="{ ' is-invalid ': submitted && (mail?.hasError('required') || mail?.hasError('minlength') || mail?.hasError('email'))}" />
+                         <div class="invalid-feedback" *ngIf=" mail?.hasError('required') && submitted ">
+                            <div>* required : true</div>
+                        </div>
+                        <div class="invalid-feedback" *ngIf=" mail?.hasError('email') && submitted ">
+                            <div>* email : false</div>
+                        </div>
+                        <div class="invalid-feedback" *ngIf=" mail?.hasError('minlength') && submitted ">
+                            <div>* Longueur min 6 caractères</div>
+                        </div>
+                    </div>
+                </div>
+                <!---------------------------------------------------------------------->
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <div class="input-group mb-3">
+                        <div class="input-group-append">
+                            <span class="input-group-text rounded-left"><i class="fas fa-lock"></i></span>
+                        </div>
+                        <input [(ngModel)]="user.password" formControlName="password" type="password" name="password" class="form-control" 
+                            placeholder="Password"  [ngClass]="{  
+                            ' is-invalid ': submitted && (pass?.hasError('required') || pass?.hasError('minlength'))  ,
+                            ' is-valid ': submitted && (!pass?.hasError('required') && !pass?.hasError('minlength')) }" >
+                            <div class="invalid-feedback" *ngIf=" pass?.hasError('required') && submitted ">
+                                <div>* required : true</div>
+                            </div>
+                            <div class="invalid-feedback" *ngIf=" pass?.hasError('minlength') && submitted ">
+                                <div>* longeur min 5 caractère</div>
+                            </div>
+                    </div>
+                </div>
+                <!---------------------------------------------------------------------->
+                <div class=" justify-content-md-left">
+                    <div>  <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span><input type="submit"  class="btn btn-primary " value="login"></div> 
+                </div>
+            </form>
+            <!--//////////////////////////////////////////////////////////////////////-->
+        </div>
+    </div>
+</div>
+

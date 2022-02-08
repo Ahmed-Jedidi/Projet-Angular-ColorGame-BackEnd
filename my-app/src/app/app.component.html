@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Color Game</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+    <!-- Brand -->
+    <a class="navbar-brand" routerLink="/ColorGame">Color Game</a>
+
+
+
+    <!--Add user-->
+    <ul class="navbar-nav ml-auto" *ngIf="authService.isAdminVIP()">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+          [Admin]
+        </a>
+        <div class="dropdown-menu">
+          
+          <a class="dropdown-item" routerLink="/users">List Users</a>
+          <a class="dropdown-item" routerLink="/add-user" >Add user</a>
+
+        </div>
+      </li>
+    </ul>
+
+
+
+
+    <!-- Links -->
+    <div class="navbar-nav ml-auto">
+
+      <a class="nav-link" routerLink="/login" *ngIf="!authService.isAdmin()">login</a>
+
+      <span class="nav-link" *ngIf="authService.isAdmin()"> {{authService.loggedUser}} &nbsp; </span>
+      <a class="nav-link" routerLink="/logout" *ngIf="authService.isAdmin()"> logout</a>
+
+    </div>
+  </nav>
+</body>
+
+</html>
+
+
+<!-- Componants -->
+<router-outlet></router-outlet>

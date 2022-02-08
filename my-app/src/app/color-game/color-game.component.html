@@ -1,0 +1,98 @@
+<br><br><br>
+<!-----------------------------------------Saisir---------------------------------------------------------->
+
+<div class=" container mt-4 mb-4">
+  <div class="row">
+
+    <div class=" row col-5">
+      <div class=" col-6 text-right">Nombre de lignes</div>
+      <div class=" col-6 "><input type="number" [(ngModel)]="line" (ngModelChange)='compteur()' name="line"
+          autofocus="autofocus" step="1" class="form-control" min="0"></div>
+    </div>
+
+
+    <div class="row col-7">
+      <div class=" col-8  text-right">Nombre de colonnes</div>
+
+      <div class=" col-4 text-center"><input type="number" [(ngModel)]="column" (ngModelChange)='compteurc()' step="1"
+          name="column" class="form-control" min="0"> </div>
+    </div>
+
+  </div>
+</div>
+
+<!----------------------------------------------Afficher----------------------------------------------------->
+<div class="container">
+  <div class="card shadow mb-4">
+    <div class="card-body">
+
+      <table style="margin-left: auto; margin-right: auto;">
+
+        <tr *ngFor="let l of range">
+          <!--         onClick='console.log("Salem");alert("Hello")'      
+                         (click)="onClick(l,c)"   [style.background-color]="getColor(l , c)"-->
+          <td><input data-toggle="modal" data-target="#exampleModal" type="button" *ngFor="let c of rangec"
+              class=" md-4" maxlength="13" style="width: 133px;margin : 10px;" [style.background-color]="'white'"
+              (click)="ChangerCouleur(CC); effacer(cl);" name="C{{l}}{{c}}C" #CC id="C{{l}}{{c}}C" >
+          </td>
+        </tr>
+
+      </table>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-----------------------------------------Popup modal Bootstrap NOT the Material Angular one---------------------------------------------------->
+
+
+
+<!-- Button trigger modal -->
+<!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    case actuelle
+  </button>-->
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Choisir un couleur</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="effacer(cl)">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <span class="text-justify">Couleur :</span>
+        <!----><input type="text" class="form-control" [(ngModel)]="newColor.newOne" name="newOne" autofocus="autofocus" #cl />
+      </div>
+      <div class="alert alert-danger" *ngIf="erreur==1 && submitted">
+        <strong>Veillez choisir un couleur valide</strong>
+      </div>
+      <div class="alert alert-success" *ngIf="erreur==0 && submitted ">
+        <strong>Changement avec success</strong>
+      </div>
+      <div class="modal-footer mx-auto">
+        <button type="button" class="btn btn-danger mr-4 button4 custom" data-dismiss="modal"
+          (click)="effacer(cl)">Annuler</button>
+        <button type="button" class="btn btn-success ml-4 <!--rounded-pill--> button4  custom"
+          (click)="Validation(cl);">Valider</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal -->
+
+
+
+<div class="container-fluid">
+  <div class="jumbotron well">
+    <a routerLink="/History" ><h1 class="text-center">L'historique chronologique des couleurs</h1></a>
+    <div class="rounded text-center bg-white" >
+    </div>
+  </div>
+</div>

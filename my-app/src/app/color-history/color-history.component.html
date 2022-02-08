@@ -1,0 +1,23 @@
+<div class="container mt-4">
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <table class="table table-striped">
+                <tr>
+                    <th>Id</th>
+                    <th>Old Color</th>
+                    <th>New Color</th>
+                    <th>Date</th>
+                </tr>
+                <tbody *ngFor="let u of colors">
+                    <tr>
+
+                        <td>{{u.id_color}}</td>
+                        <td>{{u.oldOne}}</td>
+                        <td>{{u.newOne}}</td>
+                        <td>{{u.actionDate}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
